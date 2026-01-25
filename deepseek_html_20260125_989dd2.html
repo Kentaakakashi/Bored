@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ULTIMATE Boredom Buster | 100+ Games</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff00ff;
+            --secondary: #00ffff;
+            --accent: #ffff00;
+            --dark: #0a0a1a;
+            --darker: #050510;
+            --light: #f0f0ff;
+            --neon-glow: 0 0 20px;
+            --pulse: pulse 2s infinite;
+            --float: float 3s ease-in-out infinite;
+            --shimmer: shimmer 3s infinite;
+            --rotate: rotate 20s linear infinite;
+            --bounce: bounce 0.5s ease infinite alternate;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            padding: 0;
+        }
+
+        /* Cosmic Background */
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -100;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite var(--delay);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        .nebula {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            animation: var(--float);
+        }
+
+        .nebula-1 {
+            background: radial-gradient(circle, var(--primary), transparent);
+            top: 10%;
+            left: 10%;
+        }
+
+        .nebula-2 {
+            background: radial-gradient(circle, var(--secondary), transparent);
+            bottom: 10%;
+            right: 10%;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .main-header {
+            text-align: center;
+            padding: 20px 15px 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            background: rgba(10, 10, 26, 0.7);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 0, 255, 0.3);
+            margin-bottom: 25px;
+            box-shadow: 0 0 50px rgba(255, 0, 255, 0.2);
+            animation: borderGlow 3s infinite alternate;
+        }
+
+        @keyframes borderGlow {
+            0% { border-color: rgba(255, 0, 255, 0.3); box-shadow: 0 0 30px rgba(255, 0, 255, 0.2); }
+            100% { border-color: rgba(0, 255, 255, 0.4); box-shadow: 0 0 50px rgba(0, 255, 255, 0.3); }
+        }
+
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+            animation: var(--shimmer);
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -500px 0; }
+            100% { background-position: 500px 0; }
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #a0a0ff;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.5;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .stat {
+            background: rgba(0, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 20px;
+            min-width: 120px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            animation: var(--pulse);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .stat-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 12px 25px;
+            background: rgba(255, 0, 255, 0.1);
+            border: none;
+            border-radius: 50px;
+            color: var(--light);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background: rgba(255, 0, 255, 0.3);
+            box-shadow: 0 0 20px var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .nav-tab i {
+            margin-right: 8px;
+        }
+
+        /* Game Sections */
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            border-radius: 2px;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .game-card {
+            background: rgba(20, 20, 40, 0.8);
+            border-radius: 20px;
+            padding: 20px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 160px;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.3);
+        }
+
+        .game-card:nth-child(3n):hover {
+            border-color: var(--secondary);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .game-card:nth-child(5n):hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(255, 255, 0, 0.3);
+        }
+
+        .game-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            animation: var(--float);
+        }
+
+        .game-card:nth-child(3n) .game-icon {
+            color: var(--secondary);
+        }
+
+        .game-card:nth-child(5n) .game-icon {
+            color: var(--accent);
+        }
+
+        .game-name {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .game-desc {
+            font-size: 0.8rem;
+            color: #a0a0ff;
+            opacity: 0.8;
+        }
+
+        .game-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: var(--dark);
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: 800;
+        }
+
+        /* Quick Play Section */
+        .quick-play {
+            background: rgba(0, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(0, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .quick-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .quick-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .quick-btn {
+            padding: 15px 25px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 50px;
+            color: var(--dark);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 160px;
+            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 0, 255, 0.6);
+        }
+
+        .quick-btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .quick-btn:hover:after {
+            left: 100%;
+        }
+
+        /* Game Screen */
+        .game-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--darker);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .game-screen.active {
+            display: flex;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 0, 255, 0.3);
+        }
+
+        .game-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .close-game {
+            background: rgba(255, 0, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-game:hover {
+            background: rgba(255, 0, 255, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .game-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        /* Specific Game Styles */
+        #flappyBirdGame {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            border: 5px solid var(--primary);
+            margin: 0 auto;
+        }
+
+        #bird {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            background: var(--accent);
+            border-radius: 50% 50% 40% 40%;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .pipe {
+            position: absolute;
+            width: 60px;
+            background: linear-gradient(to bottom, #00aa00, #008800);
+            border-left: 5px solid #006600;
+            border-right: 5px solid #006600;
+        }
+
+        #scoreDisplay {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            z-index: 10;
+            text-shadow: 2px 2px 0 var(--accent);
+        }
+
+        #gameMessage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--dark);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 20px;
+            display: none;
+            z-index: 20;
+            border: 5px solid var(--primary);
+        }
+
+        #dinoGame {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background: #f7f7f7;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            border: 5px solid var(--secondary);
+            margin: 0 auto;
+        }
+
+        #dino {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #555;
+            bottom: 0;
+            left: 50px;
+        }
+
+        .cactus {
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            background: #0a0;
+            bottom: 0;
+        }
+
+        #dinoScore {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark);
+            z-index: 10;
+        }
+
+        #memoryGame {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .memory-card {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            position: relative;
+        }
+
+        .memory-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .memory-card .front, .memory-card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .memory-card .front {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: transparent;
+        }
+
+        .memory-card .back {
+            background: var(--accent);
+            color: var(--dark);
+            transform: rotateY(180deg);
+            font-weight: 900;
+        }
+
+        /* Activity Feed */
+        .activity-feed {
+            background: rgba(255, 0, 255, 0.05);
+            border-radius: 25px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 2px solid rgba(255, 0, 255, 0.2);
+        }
+
+        .activity-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .activity-list {
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .activity-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid var(--secondary);
+            animation: slideInRight 0.3s ease;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .activity-text {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .activity-time {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            text-align: right;
+        }
+
+        /* Footer */
+        .main-footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-top: 2px solid rgba(255, 0, 255, 0.2);
+            position: relative;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: #a0a0ff;
+            margin-bottom: 10px;
+        }
+
+        .heart {
+            color: var(--primary);
+            animation: var(--pulse);
+            display: inline-block;
+        }
+
+        .gf-status {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            animation: var(--bounce);
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(10, 10, 26, 0.8);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 10px;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .game-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+            
+            .game-card {
+                min-height: 140px;
+                padding: 15px 10px;
+            }
+            
+            .game-icon {
+                font-size: 2rem;
+            }
+            
+            .game-name {
+                font-size: 0.9rem;
+            }
+            
+            .nav-tab {
+                min-width: 120px;
+                padding: 10px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .quick-btn {
+                min-width: 140px;
+                padding: 12px 20px;
+            }
+            
+            .stat {
+                min-width: 100px;
+                padding: 8px 12px;
+            }
+            
+            .stat-value {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            
+            .nav-tab {
+                min-width: 100px;
+                padding: 8px 12px;
+                font-size: 0.7rem;
+            }
+            
+            .title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .glow {
+            text-shadow: 0 0 10px currentColor;
+        }
+
+        .neon-text {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 0, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Special Elements */
+        .special-offer {
+            background: linear-gradient(135deg, #ff0080, #8000ff);
+            padding: 15px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 25px 0;
+            animation: var(--pulse);
+            border: 3px solid var(--accent);
+        }
+
+        .offer-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .countdown-timer {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--accent);
+            text-shadow: 0 0 10px var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cosmic Background -->
+    <div class="cosmic-bg" id="cosmicBg"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="main-header">
+            <h1 class="title">ULTIMATE BOREDOM BUSTER</h1>
+            <p class="subtitle">Your girlfriend is busy? WE'VE GOT 100+ GAMES & ACTIVITIES to keep you entertained for hours! No more boredom, just endless fun.</p>
+            
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-value" id="gameCount">127</span>
+                    <span class="stat-label">Games Available</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="playTime">∞</span>
+                    <span class="stat-label">Hours of Fun</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="userLevel">99</span>
+                    <span class="stat-label">Your Level</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-section="featured">
+                <i class="fas fa-star"></i> Featured
+            </button>
+            <button class="nav-tab" data-section="games">
+                <i class="fas fa-gamepad"></i> All Games (127)
+            </button>
+            <button class="nav-tab" data-section="quick">
+                <i class="fas fa-bolt"></i> Quick Play
+            </button>
+            <button class="nav-tab" data-section="activities">
+                <i class="fas fa-lightbulb"></i> Activities
+            </button>
+        </div>
+
+        <!-- Featured Games Section -->
+        <section id="featured" class="section active">
+            <h2 class="section-title">🔥 FEATURED GAMES 🔥</h2>
+            
+            <div class="special-offer">
+                <div class="offer-title">🚀 DAILY CHALLENGE UNLOCKED!</div>
+                <p>Complete 3 games today to earn the "Boredom Slayer" badge!</p>
+                <div class="countdown-timer" id="dailyTimer">23:59:59</div>
+            </div>
+            
+            <div class="game-grid">
+                <!-- Featured games will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- All Games Section -->
+        <section id="games" class="section">
+            <h2 class="section-title">🎮 ALL GAMES COLLECTION</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: var(--secondary);">Scroll through 127 amazing games! Tap to play instantly.</p>
+            
+            <div class="game-grid" id="allGamesGrid">
+                <!-- All games will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Quick Play Section -->
+        <section id="quick" class="section">
+            <h2 class="section-title">⚡ INSTANT FUN</h2>
+            
+            <div class="quick-play">
+                <h3 class="quick-title">NEED SOMETHING QUICK? TRY THESE!</h3>
+                <div class="quick-buttons">
+                    <button class="quick-btn" id="randomGameBtn">
+                        <i class="fas fa-random"></i> Random Game
+                    </button>
+                    <button class="quick-btn" id="challengeBtn">
+                        <i class="fas fa-trophy"></i> 60-Second Challenge
+                    </button>
+                    <button class="quick-btn" id="triviaBtn">
+                        <i class="fas fa-brain"></i> Quick Trivia
+                    </button>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <h3 class="quick-title">TOP PICKS THIS WEEK</h3>
+                    <div class="game-grid" id="topPicksGrid">
+                        <!-- Top picks will be added here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section id="activities" class="section">
+            <h2 class="section-title">💡 BOREDOM-KILLING ACTIVITIES</h2>
+            
+            <div class="quick-play">
+                <h3 class="quick-title">WHEN YOU NEED A BREAK FROM GAMES</h3>
+                <div class="quick-buttons">
+                    <button class="quick-btn" id="randomActivityBtn">
+                        <i class="fas fa-dice"></i> Random Activity
+                    </button>
+                    <button class="quick-btn" id="learnBtn">
+                        <i class="fas fa-graduation-cap"></i> Learn Something
+                    </button>
+                    <button class="quick-btn" id="planBtn">
+                        <i class="fas fa-heart"></i> Plan for Her
+                    </button>
+                </div>
+            </div>
+            
+            <div class="activity-feed">
+                <h3 class="activity-title"><i class="fas fa-history"></i> YOUR RECENT ACTIVITIES</h3>
+                <div class="activity-list" id="activityList">
+                    <!-- Activities will be added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Feed -->
+        <div class="activity-feed">
+            <h3 class="activity-title"><i class="fas fa-fire"></i> TRENDING RIGHT NOW</h3>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-text">"Flappy Bird Extreme" is trending with 5,432 plays today!</div>
+                    <div class="activity-time">Just now</div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-text">User "BoredomSlayer99" just completed 25 games in a row!</div>
+                    <div class="activity-time">5 minutes ago</div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-text">New game "CyberPunk Runner" added to the collection!</div>
+                    <div class="activity-time">1 hour ago</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <p class="footer-text">Made with <span class="heart">❤️</span> for those moments when she's busy</p>
+            <p class="footer-text">Pro tip: The more you play, the more interesting stories you'll have for her!</p>
+            <div class="gf-status">
+                <i class="fas fa-user-clock"></i> GF STATUS: BUSY | YOUR STATUS: ENTERTAINED
+            </div>
+        </footer>
+    </div>
+
+    <!-- Game Screens -->
+    <div class="game-screen" id="flappyBirdScreen">
+        <div class="game-header">
+            <h2 class="game-title">FLAPPY BIRD EXTREME</h2>
+            <button class="close-game" id="closeFlappy"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="game-content">
+            <div id="flappyBirdGame">
+                <div id="bird"></div>
+                <div id="scoreDisplay">0</div>
+                <div id="gameMessage">Click/Tap to Start!</div>
+            </div>
+            <p style="margin-top: 20px; text-align: center; color: var(--secondary);">Tap screen or press SPACE to flap. Avoid the pipes!</p>
+        </div>
+    </div>
+
+    <div class="game-screen" id="memoryGameScreen">
+        <div class="game-header">
+            <h2 class="game-title">MEMORY MASTER</h2>
+            <button class="close-game" id="closeMemory"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="game-content">
+            <div id="memoryGame">
+                <!-- Memory cards will be generated here -->
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <h3 style="color: var(--primary); margin-bottom: 10px;">Moves: <span id="moveCount">0</span> | Pairs: <span id="pairCount">0</span>/8</h3>
+                <button class="quick-btn" id="resetMemory" style="padding: 10px 20px;">Reset Game</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-screen" id="dinoGameScreen">
+        <div class="game-header">
+            <h2 class="game-title">DINO RUNNER</h2>
+            <button class="close-game" id="closeDino"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="game-content">
+            <div id="dinoGame">
+                <div id="dino"></div>
+                <div id="dinoScore">0</div>
+            </div>
+            <p style="margin-top: 20px; text-align: center; color: var(--secondary);">Press SPACE or UP ARROW to jump. Avoid the cacti!</p>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // GLOBAL VARIABLES & INITIALIZATION
+        // ============================================
+        let gamesPlayed = 0;
+        let currentGame = null;
+        let gameInterval = null;
+        let activities = [];
+        
+        // Games Database - 100+ Games!
+        const gamesDB = [
+            // Featured Games (20)
+            { id: 1, name: "Flappy Bird Extreme", icon: "fas fa-dove", desc: "Tap to fly, avoid pipes!", category: "arcade", featured: true },
+            { id: 2, name: "Memory Master", icon: "fas fa-brain", desc: "Test your memory skills", category: "puzzle", featured: true },
+            { id: 3, name: "Dino Runner", icon: "fas fa-running", desc: "Endless runner game", category: "arcade", featured: true },
+            { id: 4, name: "Space Invaders", icon: "fas fa-space-shuttle", desc: "Classic arcade shooter", category: "arcade", featured: true },
+            { id: 5, name: "2048 Puzzle", icon: "fas fa-th", desc: "Merge numbers to 2048", category: "puzzle", featured: true },
+            { id: 6, name: "Snake Xtreme", icon: "fas fa-snake", desc: "Classic snake with a twist", category: "arcade", featured: true },
+            { id: 7, name: "Tic Tac Toe Pro", icon: "fas fa-times-circle", desc: "Beat the AI in Tic Tac Toe", category: "strategy", featured: true },
+            { id: 8, name: "Pixel Painter", icon: "fas fa-paint-brush", desc: "Create pixel art", category: "creative", featured: true },
+            { id: 9, name: "Math Blaster", icon: "fas fa-calculator", desc: "Solve math problems fast", category: "educational", featured: true },
+            { id: 10, name: "Word Search", icon: "fas fa-search", desc: "Find hidden words", category: "puzzle", featured: true },
+            
+            // More games to reach 100+ (90 more)
+            { id: 11, name: "Brick Breaker", icon: "fas fa-square", desc: "Break all the bricks", category: "arcade" },
+            { id: 12, name: "Sudoku", icon: "fas fa-table", desc: "Classic number puzzle", category: "puzzle" },
+            { id: 13, name: "Chess", icon: "fas fa-chess", desc: "Play against AI", category: "strategy" },
+            { id: 14, name: "Solitaire", icon: "fas fa-heart", desc: "Classic card game", category: "card" },
+            { id: 15, name: "Crossword", icon: "fas fa-font", desc: "Fill in the words", category: "puzzle" },
+            { id: 16, name: "Pong", icon: "fas fa-table-tennis", desc: "Classic paddle game", category: "arcade" },
+            { id: 17, name: "Tetris", icon: "fas fa-th-large", desc: "Arrange falling blocks", category: "arcade" },
+            { id: 18, name: "Minesweeper", icon: "fas fa-bomb", desc: "Find mines safely", category: "puzzle" },
+            { id: 19, name: "Whack-a-Mole", icon: "fas fa-paw", desc: "Hit the moles!", category: "arcade" },
+            { id: 20, name: "Simon Says", icon: "fas fa-memory", desc: "Repeat the pattern", category: "memory" },
+            
+            // Adding more to reach 100+ (we'll generate the rest programmatically)
+        ];
+
+        // Generate more games to reach 100+
+        function generateMoreGames() {
+            const gameTemplates = [
+                { name: "Jigsaw Puzzle", icon: "fas fa-puzzle-piece", category: "puzzle" },
+                { name: "Hangman", icon: "fas fa-user", category: "word" },
+                { name: "Word Scramble", icon: "fas fa-random", category: "word" },
+                { name: "Trivia Challenge", icon: "fas fa-question-circle", category: "educational" },
+                { name: "Color Match", icon: "fas fa-palette", category: "puzzle" },
+                { name: "Speed Typing", icon: "fas fa-keyboard", category: "educational" },
+                { name: "Reaction Test", icon: "fas fa-bolt", category: "arcade" },
+                { name: "Aim Trainer", icon: "fas fa-crosshairs", category: "arcade" },
+                { name: "Rhythm Game", icon: "fas fa-music", category: "music" },
+                { name: "Drawing Game", icon: "fas fa-pencil-alt", category: "creative" },
+                { name: "Physics Puzzle", icon: "fas fa-weight-hanging", category: "puzzle" },
+                { name: "Maze Runner", icon: "fas fa-project-diagram", category: "puzzle" },
+                { name: "Platformer", icon: "fas fa-gamepad", category: "arcade" },
+                { name: "Racing Game", icon: "fas fa-flag-checkered", category: "arcade" },
+                { name: "Fighting Game", icon: "fas fa-fist-raised", category: "arcade" },
+                { name: "Adventure Game", icon: "fas fa-map", category: "adventure" },
+                { name: "RPG", icon: "fas fa-dragon", category: "adventure" },
+                { name: "Simulation", icon: "fas fa-city", category: "simulation" },
+                { name: "Strategy Game", icon: "fas fa-chess-board", category: "strategy" },
+                { name: "Card Battle", icon: "fas fa-layer-group", category: "card" },
+            ];
+            
+            let id = 21;
+            for (let i = 0; i < 80; i++) {
+                const template = gameTemplates[i % gameTemplates.length];
+                const gameName = `${template.name} ${Math.floor(i/10)+1}`;
+                const gameDesc = `Awesome ${template.category} game`;
+                
+                gamesDB.push({
+                    id: id++,
+                    name: gameName,
+                    icon: template.icon,
+                    desc: gameDesc,
+                    category: template.category,
+                    featured: i < 10 // First 10 of these are featured
+                });
+            }
+        }
+        
+        // Activities Database
+        const activitiesDB = [
+            "Learn a magic trick to impress her later",
+            "Write a short love note for when she's free",
+            "Plan your next date in extreme detail",
+            "Research a new hobby you can do together",
+            "Create a playlist of songs that remind you of her",
+            "Watch a documentary to have interesting conversations",
+            "Learn to cook her favorite dish",
+            "Organize your photos and pick the best ones of you two",
+            "Practice a new skill (juggling, dancing, etc.)",
+            "Write down 10 things you love about her",
+            "Plan a surprise weekend getaway",
+            "Learn the basics of a new language together",
+            "Create a scrapbook of your memories",
+            "Research interesting conversation topics",
+            "Practice giving better compliments",
+            "Learn about her interests to connect better",
+            "Plan a movie marathon with all her favorites",
+            "Create a custom gift for your next anniversary",
+            "Write a poem or short story about your relationship",
+            "Brainstorm future goals you can achieve together"
+        ];
+
+        // ============================================
+        // DOM ELEMENTS
+        // ============================================
+        const navTabs = document.querySelectorAll('.nav-tab');
+        const sections = document.querySelectorAll('.section');
+        const featuredGrid = document.querySelector('#featured .game-grid');
+        const allGamesGrid = document.getElementById('allGamesGrid');
+        const topPicksGrid = document.getElementById('topPicksGrid');
+        const activityList = document.getElementById('activityList');
+        const gameCount = document.getElementById('gameCount');
+        const dailyTimer = document.getElementById('dailyTimer');
+        
+        // Game screen elements
+        const flappyBirdScreen = document.getElementById('flappyBirdScreen');
+        const memoryGameScreen = document.getElementById('memoryGameScreen');
+        const dinoGameScreen = document.getElementById('dinoGameScreen');
+        const closeFlappy = document.getElementById('closeFlappy');
+        const closeMemory = document.getElementById('closeMemory');
+        const closeDino = document.getElementById('closeDino');
+        
+        // Quick action buttons
+        const randomGameBtn = document.getElementById('randomGameBtn');
+        const challengeBtn = document.getElementById('challengeBtn');
+        const triviaBtn = document.getElementById('triviaBtn');
+        const randomActivityBtn = document.getElementById('randomActivityBtn');
+        const learnBtn = document.getElementById('learnBtn');
+        const planBtn = document.getElementById('planBtn');
+        
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate more games
+            generateMoreGames();
+            
+            // Update game count
+            gameCount.textContent = gamesDB.length;
+            
+            // Create cosmic background
+            createCosmicBackground();
+            
+            // Load games into grids
+            loadFeaturedGames();
+            loadAllGames();
+            loadTopPicks();
+            loadActivities();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Start daily timer
+            startDailyTimer();
+            
+            // Add initial activity
+            logActivity("Welcome to Ultimate Boredom Buster! Ready to play?", true);
+            
+            // Start background animations
+            animateBackground();
+        });
+
+        // ============================================
+        // BACKGROUND & VISUAL EFFECTS
+        // ============================================
+        function createCosmicBackground() {
+            const cosmicBg = document.getElementById('cosmicBg');
+            
+            // Create stars
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                cosmicBg.appendChild(star);
+            }
+            
+            // Create nebulas
+            const nebula1 = document.createElement('div');
+            nebula1.className = 'nebula nebula-1';
+            cosmicBg.appendChild(nebula1);
+            
+            const nebula2 = document.createElement('div');
+            nebula2.className = 'nebula nebula-2';
+            cosmicBg.appendChild(nebula2);
+        }
+        
+        function animateBackground() {
+            // Animate nebulas
+            const nebulas = document.querySelectorAll('.nebula');
+            nebulas.forEach((nebula, index) => {
+                let x = 0;
+                let y = 0;
+                let xDir = Math.random() * 0.5 + 0.2;
+                let yDir = Math.random() * 0.5 + 0.2;
+                
+                setInterval(() => {
+                    x += xDir;
+                    y += yDir;
+                    
+                    if (x > 100 || x < 0) xDir *= -1;
+                    if (y > 100 || y < 0) yDir *= -1;
+                    
+                    nebula.style.left = x + '%';
+                    nebula.style.top = y + '%';
+                }, 50);
+            });
+        }
+
+        // ============================================
+        // GAME MANAGEMENT
+        // ============================================
+        function loadFeaturedGames() {
+            featuredGrid.innerHTML = '';
+            const featuredGames = gamesDB.filter(game => game.featured);
+            
+            featuredGames.forEach(game => {
+                const gameCard = createGameCard(game);
+                featuredGrid.appendChild(gameCard);
+            });
+        }
+        
+        function loadAllGames() {
+            allGamesGrid.innerHTML = '';
+            
+            gamesDB.forEach(game => {
+                const gameCard = createGameCard(game);
+                allGamesGrid.appendChild(gameCard);
+            });
+        }
+        
+        function loadTopPicks() {
+            topPicksGrid.innerHTML = '';
+            
+            // Select random games for top picks
+            const shuffled = [...gamesDB].sort(() => 0.5 - Math.random());
+            const topPicks = shuffled.slice(0, 6);
+            
+            topPicks.forEach(game => {
+                const gameCard = createGameCard(game);
+                topPicksGrid.appendChild(gameCard);
+            });
+        }
+        
+        function createGameCard(game) {
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            card.setAttribute('data-game-id', game.id);
+            
+            // Add badge for featured games
+            const badge = game.featured ? '<div class="game-badge">FEATURED</div>' : '';
+            
+            card.innerHTML = `
+                ${badge}
+                <div class="game-icon"><i class="${game.icon}"></i></div>
+                <div class="game-name">${game.name}</div>
+                <div class="game-desc">${game.desc}</div>
+            `;
+            
+            card.addEventListener('click', () => openGame(game.id));
+            return card;
+        }
+        
+        function openGame(gameId) {
+            const game = gamesDB.find(g => g.id === gameId);
+            if (!game) return;
+            
+            logActivity(`Started playing "${game.name}"`, false);
+            gamesPlayed++;
+            
+            // Update stats
+            document.getElementById('userLevel').textContent = Math.min(99, Math.floor(gamesPlayed / 5) + 1);
+            
+            // Open specific game based on ID
+            if (gameId <= 3) {
+                // Open one of the three main games
+                if (gameId === 1) openFlappyBird();
+                else if (gameId === 2) openMemoryGame();
+                else if (gameId === 3) openDinoGame();
+            } else {
+                // For other games, show a placeholder
+                alert(`🚀 Launching "${game.name}"...\n\n(Since this is a demo, only the first 3 games are fully implemented. But imagine an awesome ${game.category} game here!)`);
+            }
+        }
+        
+        function openFlappyBird() {
+            flappyBirdScreen.classList.add('active');
+            initFlappyBird();
+        }
+        
+        function openMemoryGame() {
+            memoryGameScreen.classList.add('active');
+            initMemoryGame();
+        }
+        
+        function openDinoGame() {
+            dinoGameScreen.classList.add('active');
+            initDinoGame();
+        }
+        
+        function closeAllGames() {
+            document.querySelectorAll('.game-screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Clear any game intervals
+            if (gameInterval) clearInterval(gameInterval);
+        }
+
+        // ============================================
+        // FLAPPY BIRD GAME
+        // ============================================
+        let birdY = 250;
+        let birdVelocity = 0;
+        let gravity = 0.5;
+        let flappyScore = 0;
+        let flappyPipes = [];
+        let pipeWidth = 60;
+        let pipeGap = 150;
+        let flappyGameRunning = false;
+        
+        function initFlappyBird() {
+            const gameContainer = document.getElementById('flappyBirdGame');
+            const bird = document.getElementById('bird');
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const gameMessage = document.getElementById('gameMessage');
+            
+            // Reset game state
+            birdY = 250;
+            birdVelocity = 0;
+            flappyScore = 0;
+            flappyPipes = [];
+            flappyGameRunning = false;
+            
+            // Position bird
+            bird.style.top = birdY + 'px';
+            scoreDisplay.textContent = flappyScore;
+            gameMessage.textContent = "Click/Tap to Start!";
+            gameMessage.style.display = 'block';
+            
+            // Clear any existing pipes
+            document.querySelectorAll('.pipe').forEach(pipe => pipe.remove());
+            
+            // Event listeners
+            gameContainer.addEventListener('click', startFlappyGame);
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    if (!flappyGameRunning) startFlappyGame();
+                    else flapBird();
+                }
+            });
+        }
+        
+        function startFlappyGame() {
+            if (flappyGameRunning) return;
+            
+            flappyGameRunning = true;
+            document.getElementById('gameMessage').style.display = 'none';
+            
+            // Start game loop
+            gameInterval = setInterval(updateFlappyGame, 20);
+            
+            // Add first pipe after a delay
+            setTimeout(addFlappyPipe, 1000);
+        }
+        
+        function updateFlappyGame() {
+            if (!flappyGameRunning) return;
+            
+            // Apply gravity
+            birdVelocity += gravity;
+            birdY += birdVelocity;
+            
+            // Keep bird in bounds
+            if (birdY < 0) birdY = 0;
+            if (birdY > 470) {
+                birdY = 470;
+                endFlappyGame();
+            }
+            
+            // Update bird position
+            document.getElementById('bird').style.top = birdY + 'px';
+            
+            // Move pipes
+            moveFlappyPipes();
+            
+            // Check collisions
+            checkFlappyCollisions();
+        }
+        
+        function flapBird() {
+            if (!flappyGameRunning) return;
+            birdVelocity = -10;
+        }
+        
+        function addFlappyPipe() {
+            if (!flappyGameRunning) return;
+            
+            const gameContainer = document.getElementById('flappyBirdGame');
+            const pipeHeight = Math.floor(Math.random() * 200) + 50;
+            
+            // Create top pipe
+            const topPipe = document.createElement('div');
+            topPipe.className = 'pipe';
+            topPipe.style.height = pipeHeight + 'px';
+            topPipe.style.top = '0px';
+            topPipe.style.left = '400px';
+            gameContainer.appendChild(topPipe);
+            
+            // Create bottom pipe
+            const bottomPipe = document.createElement('div');
+            bottomPipe.className = 'pipe';
+            bottomPipe.style.height = (500 - pipeHeight - pipeGap) + 'px';
+            bottomPipe.style.bottom = '0px';
+            bottomPipe.style.left = '400px';
+            gameContainer.appendChild(bottomPipe);
+            
+            // Store pipe data
+            flappyPipes.push({
+                x: 400,
+                topHeight: pipeHeight,
+                bottomHeight: 500 - pipeHeight - pipeGap,
+                topElement: topPipe,
+                bottomElement: bottomPipe,
+                passed: false
+            });
+            
+            // Schedule next pipe
+            setTimeout(addFlappyPipe, 1500);
+        }
+        
+        function moveFlappyPipes() {
+            for (let i = flappyPipes.length - 1; i >= 0; i--) {
+                const pipe = flappyPipes[i];
+                pipe.x -= 3;
+                
+                // Update pipe positions
+                pipe.topElement.style.left = pipe.x + 'px';
+                pipe.bottomElement.style.left = pipe.x + 'px';
+                
+                // Check if pipe passed the bird
+                if (!pipe.passed && pipe.x < 50) {
+                    pipe.passed = true;
+                    flappyScore++;
+                    document.getElementById('scoreDisplay').textContent = flappyScore;
+                }
+                
+                // Remove pipes that are off screen
+                if (pipe.x < -pipeWidth) {
+                    pipe.topElement.remove();
+                    pipe.bottomElement.remove();
+                    flappyPipes.splice(i, 1);
+                }
+            }
+        }
+        
+        function checkFlappyCollisions() {
+            const birdLeft = 50;
+            const birdRight = 90;
+            const birdTop = birdY;
+            const birdBottom = birdY + 30;
+            
+            for (const pipe of flappyPipes) {
+                const pipeLeft = pipe.x;
+                const pipeRight = pipe.x + pipeWidth;
+                
+                // Check collision with top pipe
+                if (birdRight > pipeLeft && birdLeft < pipeRight) {
+                    if (birdTop < pipe.topHeight || birdBottom > (500 - pipe.bottomHeight)) {
+                        endFlappyGame();
+                        return;
+                    }
+                }
+            }
+        }
+        
+        function endFlappyGame() {
+            flappyGameRunning = false;
+            clearInterval(gameInterval);
+            
+            const gameMessage = document.getElementById('gameMessage');
+            gameMessage.textContent = `Game Over! Score: ${flappyScore}`;
+            gameMessage.style.display = 'block';
+            
+            logActivity(`Finished Flappy Bird with score: ${flappyScore}`, false);
+        }
+
+        // ============================================
+        // MEMORY GAME
+        // ============================================
+        let memoryCards = [];
+        let flippedCards = [];
+        let memoryMatches = 0;
+        let memoryMoves = 0;
+        
+        function initMemoryGame() {
+            const memoryGame = document.getElementById('memoryGame');
+            memoryGame.innerHTML = '';
+            
+            // Reset game state
+            memoryCards = [];
+            flippedCards = [];
+            memoryMatches = 0;
+            memoryMoves = 0;
+            
+            // Create card values (8 pairs)
+            const values = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+            const cardValues = [...values, ...values]; // Duplicate for pairs
+            shuffleArray(cardValues);
+            
+            // Create cards
+            for (let i = 0; i < 16; i++) {
+                const card = document.createElement('div');
+                card.className = 'memory-card';
+                card.dataset.value = cardValues[i];
+                
+                const front = document.createElement('div');
+                front.className = 'front';
+                
+                const back = document.createElement('div');
+                back.className = 'back';
+                back.textContent = cardValues[i];
+                
+                card.appendChild(front);
+                card.appendChild(back);
+                
+                card.addEventListener('click', () => flipMemoryCard(card));
+                memoryGame.appendChild(card);
+                memoryCards.push(card);
+            }
+            
+            // Update counters
+            updateMemoryCounters();
+        }
+        
+        function flipMemoryCard(card) {
+            // Don't allow flipping if already flipped or matched
+            if (card.classList.contains('flipped') || flippedCards.length >= 2) {
+                return;
+            }
+            
+            // Flip the card
+            card.classList.add('flipped');
+            flippedCards.push(card);
+            
+            // Check for match if two cards are flipped
+            if (flippedCards.length === 2) {
+                memoryMoves++;
+                updateMemoryCounters();
+                
+                const [card1, card2] = flippedCards;
+                const isMatch = card1.dataset.value === card2.dataset.value;
+                
+                if (isMatch) {
+                    // Match found
+                    memoryMatches++;
+                    flippedCards = [];
+                    
+                    // Check if game is complete
+                    if (memoryMatches === 8) {
+                        setTimeout(() => {
+                            alert(`You won! Completed in ${memoryMoves} moves!`);
+                            logActivity(`Completed Memory Game in ${memoryMoves} moves`, false);
+                        }, 500);
+                    }
+                } else {
+                    // No match, flip back after delay
+                    setTimeout(() => {
+                        card1.classList.remove('flipped');
+                        card2.classList.remove('flipped');
+                        flippedCards = [];
+                    }, 1000);
+                }
+            }
+        }
+        
+        function updateMemoryCounters() {
+            document.getElementById('moveCount').textContent = memoryMoves;
+            document.getElementById('pairCount').textContent = memoryMatches;
+        }
+        
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // ============================================
+        // DINO RUNNER GAME
+        // ============================================
+        let dinoY = 0;
+        let dinoJumping = false;
+        let dinoJumpVelocity = 0;
+        let dinoCacti = [];
+        let dinoScore = 0;
+        let dinoGameRunning = false;
+        
+        function initDinoGame() {
+            const dino = document.getElementById('dino');
+            const dinoScoreDisplay = document.getElementById('dinoScore');
+            
+            // Reset game state
+            dinoY = 0;
+            dinoJumping = false;
+            dinoJumpVelocity = 0;
+            dinoCacti = [];
+            dinoScore = 0;
+            dinoGameRunning = false;
+            
+            // Position dino
+            dino.style.bottom = dinoY + 'px';
+            dinoScoreDisplay.textContent = dinoScore;
+            
+            // Clear existing cacti
+            document.querySelectorAll('.cactus').forEach(cactus => cactus.remove());
+            
+            // Event listeners
+            document.addEventListener('keydown', (e) => {
+                if ((e.code === 'Space' || e.code === 'ArrowUp') && !dinoJumping) {
+                    startDinoJump();
+                }
+            });
+            
+            // Start game
+            startDinoGame();
+        }
+        
+        function startDinoGame() {
+            dinoGameRunning = true;
+            
+            // Game loop
+            gameInterval = setInterval(updateDinoGame, 20);
+            
+            // Start generating cacti
+            setTimeout(addDinoCactus, 1000);
+        }
+        
+        function updateDinoGame() {
+            if (!dinoGameRunning) return;
+            
+            // Update dino position if jumping
+            if (dinoJumping) {
+                dinoY += dinoJumpVelocity;
+                dinoJumpVelocity -= 0.5; // Gravity
+                
+                // Hit ground
+                if (dinoY <= 0) {
+                    dinoY = 0;
+                    dinoJumping = false;
+                }
+                
+                document.getElementById('dino').style.bottom = dinoY + 'px';
+            }
+            
+            // Move cacti
+            moveDinoCacti();
+            
+            // Check collisions
+            checkDinoCollisions();
+            
+            // Increase score
+            dinoScore += 0.1;
+            document.getElementById('dinoScore').textContent = Math.floor(dinoScore);
+        }
+        
+        function startDinoJump() {
+            if (!dinoGameRunning || dinoJumping) return;
+            dinoJumping = true;
+            dinoJumpVelocity = 15;
+        }
+        
+        function addDinoCactus() {
+            if (!dinoGameRunning) return;
+            
+            const dinoGame = document.getElementById('dinoGame');
+            const cactus = document.createElement('div');
+            cactus.className = 'cactus';
+            cactus.style.right = '0px';
+            cactus.style.height = Math.random() * 30 + 30 + 'px';
+            dinoGame.appendChild(cactus);
+            
+            dinoCacti.push({
+                element: cactus,
+                x: 600
+            });
+            
+            // Schedule next cactus
+            setTimeout(addDinoCactus, Math.random() * 1000 + 500);
+        }
+        
+        function moveDinoCacti() {
+            for (let i = dinoCacti.length - 1; i >= 0; i--) {
+                const cactus = dinoCacti[i];
+                cactus.x -= 5;
+                cactus.element.style.right = (600 - cactus.x) + 'px';
+                
+                // Remove off-screen cacti
+                if (cactus.x < -50) {
+                    cactus.element.remove();
+                    dinoCacti.splice(i, 1);
+                }
+            }
+        }
+        
+        function checkDinoCollisions() {
+            const dinoHeight = 50;
+            const dinoWidth = 50;
+            const dinoRight = 100; // Dino's right side position
+            
+            for (const cactus of dinoCacti) {
+                const cactusLeft = cactus.x;
+                const cactusRight = cactus.x + 20;
+                const cactusHeight = parseInt(cactus.element.style.height);
+                
+                // Check collision
+                if (cactusRight > 50 && cactusLeft < dinoRight) {
+                    if (dinoY < cactusHeight) {
+                        endDinoGame();
+                        return;
+                    }
+                }
+            }
+        }
+        
+        function endDinoGame() {
+            dinoGameRunning = false;
+            clearInterval(gameInterval);
+            
+            alert(`Game Over! Final Score: ${Math.floor(dinoScore)}`);
+            logActivity(`Finished Dino Runner with score: ${Math.floor(dinoScore)}`, false);
+        }
+
+        // ============================================
+        // ACTIVITIES & UTILITIES
+        // ============================================
+        function loadActivities() {
+            activityList.innerHTML = '';
+            
+            // Add initial activities
+            const initialActivities = [
+                { text: "Welcome to the ultimate boredom killer!", time: "Just now" },
+                { text: "127 games loaded and ready to play!", time: "Just now" },
+                { text: "Daily challenge unlocked - complete 3 games!", time: "Today" }
+            ];
+            
+            initialActivities.forEach(activity => {
+                addActivityItem(activity.text, activity.time);
+            });
+        }
+        
+        function logActivity(text, isSystem = false) {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            
+            addActivityItem(text, timeString);
+            
+            // Limit to 10 activities
+            const activityItems = activityList.querySelectorAll('.activity-item');
+            if (activityItems.length > 10) {
+                activityItems[0].remove();
+            }
+        }
+        
+        function addActivityItem(text, time) {
+            const activityItem = document.createElement('div');
+            activityItem.className = 'activity-item';
+            activityItem.innerHTML = `
+                <div class="activity-text">${text}</div>
+                <div class="activity-time">${time}</div>
+            `;
+            
+            activityList.prepend(activityItem);
+        }
+        
+        function startDailyTimer() {
+            // Set timer to 24 hours
+            let time = 24 * 60 * 60;
+            
+            setInterval(() => {
+                time--;
+                if (time < 0) time = 24 * 60 * 60;
+                
+                const hours = Math.floor(time / 3600);
+                const minutes = Math.floor((time % 3600) / 60);
+                const seconds = time % 60;
+                
+                dailyTimer.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // ============================================
+        // EVENT LISTENERS SETUP
+        // ============================================
+        function setupEventListeners() {
+            // Navigation tabs
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const sectionId = tab.getAttribute('data-section');
+                    
+                    // Update active tab
+                    navTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Show corresponding section
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === sectionId) {
+                            section.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // Close game buttons
+            closeFlappy.addEventListener('click', closeAllGames);
+            closeMemory.addEventListener('click', closeAllGames);
+            closeDino.addEventListener('click', closeAllGames);
+            
+            // Quick action buttons
+            randomGameBtn.addEventListener('click', () => {
+                const randomGame = gamesDB[Math.floor(Math.random() * gamesDB.length)];
+                openGame(randomGame.id);
+            });
+            
+            challengeBtn.addEventListener('click', () => {
+                alert("🏆 60-SECOND CHALLENGE!\n\nScore as many points as possible in Flappy Bird in 60 seconds!\n\nReady? GO!");
+                openGame(1); // Open Flappy Bird
+            });
+            
+            triviaBtn.addEventListener('click', () => {
+                const triviaQuestions = [
+                    { q: "What is the largest planet in our solar system?", a: "Jupiter" },
+                    { q: "How many continents are there?", a: "7" },
+                    { q: "What element does 'O' represent?", a: "Oxygen" }
+                ];
+                
+                const randomQ = triviaQuestions[Math.floor(Math.random() * triviaQuestions.length)];
+                const userAnswer = prompt(`TRIVIA TIME!\n\n${randomQ.q}`);
+                
+                if (userAnswer && userAnswer.toLowerCase() === randomQ.a.toLowerCase()) {
+                    alert("🎉 CORRECT! You're a genius!");
+                } else {
+                    alert(`❌ Wrong! The correct answer is: ${randomQ.a}`);
+                }
+            });
+            
+            randomActivityBtn.addEventListener('click', () => {
+                const randomActivity = activitiesDB[Math.floor(Math.random() * activitiesDB.length)];
+                alert(`💡 BOREDOM-KILLING ACTIVITY:\n\n${randomActivity}\n\nGo do it now!`);
+                logActivity(`Started activity: "${randomActivity.substring(0, 30)}..."`, false);
+            });
+            
+            learnBtn.addEventListener('click', () => {
+                const skills = [
+                    "Learn to solve a Rubik's cube",
+                    "Learn basic sign language",
+                    "Learn 10 phrases in Spanish",
+                    "Learn a magic trick",
+                    "Learn to juggle",
+                    "Learn to whistle with your fingers",
+                    "Learn origami basics"
+                ];
+                
+                const randomSkill = skills[Math.floor(Math.random() * skills.length)];
+                alert(`🎓 LEARN SOMETHING NEW:\n\nToday, try to: ${randomSkill}\n\nYou'll impress everyone (especially her) with your new skill!`);
+            });
+            
+            planBtn.addEventListener('click', () => {
+                alert(`💖 PLAN FOR HER:\n\n1. Think of her favorite things\n2. Plan a surprise date\n3. Create something personal\n4. Learn something she loves\n\nShe'll appreciate the effort when she's free!`);
+            });
+            
+            // Reset memory game button
+            document.getElementById('resetMemory')?.addEventListener('click', initMemoryGame);
+            
+            // Mobile touch for flappy bird
+            document.getElementById('flappyBirdGame')?.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                if (!flappyGameRunning) startFlappyGame();
+                else flapBird();
+            });
+        }
+    </script>
+</body>
+</html>
